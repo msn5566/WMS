@@ -1,0 +1,64 @@
+
+
+---
+**Date:** 2025-08-12 17:09:37
+**Branch:** feature/WMS-1_20250812170853
+---
+
+Create POJOs for Warehouse Management System
+
+Define and implement core entity classes (POJOs) required for the Warehouse Management System. These classes will model the system's domain and serve as the foundation for data persistence, business logic, and API interactions.
+
+**Scope Includes:**
+-User (id, username, password, role, active)
+
+Product (productId, name, description, category, unitOfMeasure, active)
+
+SKU (skuId, product, barcode, price, weight, status)
+
+Inventory (inventoryId, sku, locationId, quantity, lastUpdated)
+
+Location (locationId, zone, bin, type)
+
+PurchaseOrder and PurchaseOrderItem
+
+SalesOrder and SalesOrderItem
+
+PutawayTask (taskId, sku, quantity, sourceLocation, targetLocation, status)
+
+PickTask (taskId, sku, quantity, fromLocation, orderId, status)
+
+AuditLog (logId, userId, action, entity, timestamp, details)
+
+InventoryAdjustment (adjustmentId, sku, beforeQty, afterQty, reason, adjustedBy, timestamp)
+
+WarehouseConfig (configId, key, value)
+
+**Acceptance Criteria:**
+
+* All POJO classes are created under `com.company.wms.model`
+* Fields follow Java naming conventions and use appropriate types
+* Use Lombok annotations like `@Data`, `@Builder`, etc.
+* Ready for JPA or MongoDB annotations
+
+
+
+Non-Functional Requirements
+
+* Must be written in Java 21 using Spring Boot 3.5.*
+* Should follow layered architecture (Controller, Service, Repository).
+* Must use Maven for build.
+* Data should be stored in a Mongodb database.
+* Should provide API documentation using Swagger/OpenAPI.
+* Unit and integration tests must be written using JUnit and Mockito.
+* Must provide Dockerfile for containerization.
+* Should include GitHub Actions CI workflow for build, test, and Docker image creation.
+
+ 
+
+GitHub-URL: [https://github.com/msn5566/WMS|https://github.com/msn5566/WMS|smart-link] 
+checkout_branch: development
+Repository-Name: WMS
+
+package-name: com.wms
+--- END ---
