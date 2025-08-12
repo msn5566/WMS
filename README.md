@@ -60,3 +60,45 @@ Logic:  Implement registration endpoint to create new user accounts with assigne
 - `io.jsonwebtoken:jjwt-jackson:0.11.8:runtime`
 
 --- END ---
+
+
+---
+**Date:** 2025-08-12 18:02:00
+**Branch:** feature/WMS-5_20250812180026
+---
+
+## 📝 Project Summary
+
+Feature: Inventory tracking APIs allowing add, update, delete and view operations by SKU and location.
+Input: SKU and location information for various operations.  Add operation requires inventory details. Update operation requires updated inventory data. Delete operation requires SKU and location. View operation requires SKU and location.
+Output:
+Add: Success/failure status.
+Update: Success/failure status.
+Delete: Success/failure status.
+View: Inventory details for given SKU and location.
+Constraints:
+- Must be written in Java 21 using Spring Boot 3.5.*
+- Must follow layered architecture (Controller, Service, Repository).
+- Must use Maven for build.
+- Data must be stored in a Mongodb database.
+- Must provide API documentation using Swagger/OpenAPI.
+- Must provide Dockerfile for containerization.
+- Unit and integration tests must be written using JUnit and Mockito.
+Logic:  The APIs will interact with a Mongodb database to manage inventory data based on SKU and location.  Standard CRUD operations will be implemented.  API documentation will be generated using Swagger/OpenAPI.  The application will be built using Maven and containerized using Docker. CI will be implemented using GitHub Actions.
+
+### 🛠️ Core Dependencies
+
+- `org.springframework.boot:spring-boot-starter-data-mongodb`
+- `org.springframework.boot:spring-boot-starter-web`
+- `org.springframework.boot:spring-boot-starter-security`
+- `org.projectlombok:lombok:optional`
+- `org.springframework.boot:spring-boot-starter-validation`
+- `org.springframework.boot:spring-boot-starter-test:test`
+- `io.jsonwebtoken:jjwt-api:0.12.5`
+- `io.jsonwebtoken:jjwt-impl:0.12.5:runtime`
+- `io.jsonwebtoken:jjwt-jackson:0.12.5:runtime`
+- `org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0`
+- `org.springframework.boot:spring-boot-starter-data-jpa`
+- `com.fasterxml.jackson.core:jackson-databind:2.16.1`
+
+--- END ---
