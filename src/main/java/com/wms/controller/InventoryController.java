@@ -1,8 +1,11 @@
-
 package com.wms.controller;
 
+import com.wms.dto.CycleCountDto;
 import com.wms.dto.InventoryDto;
+import com.wms.dto.StockAdjustmentDto;
+import com.wms.service.CycleCountService;
 import com.wms.service.InventoryService;
+import com.wms.service.StockAdjustmentService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -15,6 +18,8 @@ import org.springframework.web.bind.annotation.*;
 public class InventoryController {
 
     private final InventoryService inventoryService;
+    private final StockAdjustmentService stockAdjustmentService;
+    private final CycleCountService cycleCountService;
 
     @PostMapping
     public ResponseEntity<String> addInventory(@Valid @RequestBody InventoryDto inventoryDto) {
@@ -38,5 +43,17 @@ public class InventoryController {
     public ResponseEntity<InventoryDto> getInventory(@RequestParam String skuId, @RequestParam String locationId) {
         InventoryDto inventoryDto = inventoryService.getInventory(skuId, locationId);
         return ResponseEntity.ok(inventoryDto);
+    }
+
+    @PostMapping("/adjust")
+    @ResponseStatus(HttpStatus.OK)
+    public void adjustInventory(@Valid @RequestBody StockAdjustmentDto stockAdjustmentDto) {
+        stockAdjustmentService.adjustStock(stockAdjustmentDto);
+    }
+
+    @PostMapping("/cyclecount")
+    @ResponseStatus(HttpStatus.OK)
+    public void performCycleCount(@Valid @RequestBody CycleCountDto cycleCountDto) {
+        cycleCountService.performCycleCount(cycleCountDto);
     }
 }

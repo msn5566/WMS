@@ -102,3 +102,37 @@ Logic:  The APIs will interact with a Mongodb database to manage inventory data 
 - `com.fasterxml.jackson.core:jackson-databind:2.16.1`
 
 --- END ---
+
+
+---
+**Date:** 2025-08-13 11:11:53
+**Branch:** feature/WMS-6_20250813111015
+---
+
+## 📝 Project Summary
+
+Feature: Stock Adjustments and Cycle Counts
+Input: Stock adjustments with reasons provided by authorized users.  Cycle count data.
+Output: Updated inventory levels reflecting adjustments and cycle counts. Log of stock adjustment reasons.
+Constraints: Must be implemented in Java 21 with Spring Boot 3.5.*, follow layered architecture, use Maven, MongoDB, Swagger/OpenAPI, JUnit, Mockito, provide a Dockerfile and GitHub Actions CI workflow.
+Logic:  The system should allow authorized users to input adjustments to stock levels along with reasons for these adjustments. It should update inventory levels in the database based on these inputs.  The system should also support cycle counts, allowing comparison of physical inventory with recorded levels.
+
+### 🛠️ Core Dependencies
+
+- `org.springframework.boot:spring-boot-starter-data-mongodb`
+- `org.springframework.boot:spring-boot-starter-web`
+- `org.springframework.boot:spring-boot-starter-security`
+- `org.projectlombok:lombok:optional`
+- `org.springframework.boot:spring-boot-starter-validation`
+- `org.springframework.boot:spring-boot-starter-test:test`
+- `io.jsonwebtoken:jjwt-api:0.12.5`
+- `io.jsonwebtoken:jjwt-impl:0.12.5:runtime`
+- `io.jsonwebtoken:jjwt-jackson:0.12.5:runtime`
+- `org.springframework.boot:spring-boot-starter-data-jpa`
+- `com.fasterxml.jackson.core:jackson-databind:2.16.1`
+- `org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0`
+- `org.slf4j:slf4j-api`
+- `ch.qos.logback:logback-classic`
+- `com.fasterxml.jackson.datatype:jackson-datatype-jsr310`
+
+--- END ---

@@ -38,3 +38,15 @@
 - ❌ Removed: Scope Includes from the description.
 
 --- END ---
+
+
+---
+**Date:** 2025-08-13 11:11:53
+**Branch:** feature/WMS-6_20250813111015
+---
+
+```markdown
+### Changelog
+- 🔄 Modified: Story description changed from "Implement inventory tracking APIs Create APIs to add, update, delete and view inventory by SKU and location." to "Add support for stock adjustments and cycle counts Allow authorized users to manually adjust inventory levels and log adjustment reasons."
+```
+--- END ---

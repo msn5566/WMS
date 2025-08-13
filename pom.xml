@@ -13,9 +13,11 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
     <name>Generated Microservice</name>
+
     <properties>
         <java.version>21</java.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -70,10 +72,21 @@
             <version>2.16.1</version>
         </dependency>
         <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
             <version>2.5.0</version>
         </dependency>
+        <!--  Internal dependencies  -->
+        <dependency>
+            <groupId>com.generated</groupId>
+            <artifactId>exception-module</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
         <!-- Logging dependencies for SLF4J with Logback -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -83,11 +96,8 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.datatype</groupId>
-            <artifactId>jackson-datatype-jsr310</artifactId>
-        </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -115,12 +125,12 @@
 
     <repositories>
         <repository>
-            <id>maven-central</id>
+            <id>central</id>
             <url>https://repo.maven.apache.org/maven2</url>
         </repository>
         <repository>
-            <id>atlassian-public</id>
-            <url>https://packages.atlassian.com/maven/repository/public</url>
+           <id>local-repo</id>
+           <url>file://${basedir}/local-repo</url>
         </repository>
     </repositories>
 
