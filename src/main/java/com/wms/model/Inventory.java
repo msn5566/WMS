@@ -15,8 +15,7 @@ public class Inventory {
     @Id
     private String inventoryId;
 
-    @DBRef
-    private SKU sku;
+    private String sku; // Updated field type
 
     private String locationId; // Consider referencing Location object later
     private int quantity;
