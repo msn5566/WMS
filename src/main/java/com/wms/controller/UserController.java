@@ -14,6 +14,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +29,7 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping("/register")
+    @PreAuthorize("hasRole('ADMIN')") // Example: Only Admins can access user management
     @Operation(summary = "Register a new user", description = "Registers a new user with the provided credentials and role.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "User registered successfully",

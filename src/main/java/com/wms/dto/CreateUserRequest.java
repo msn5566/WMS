@@ -1,3 +1,4 @@
+
 package com.wms.dto;
 
 import jakarta.validation.constraints.NotBlank;
@@ -15,6 +16,10 @@ public class CreateUserRequest {
     @Size(min = 6, message = "Password must be at least 6 characters")
     private String password;
 
-    @NotBlank(message = "Role cannot be blank")
-    private String role; // Should be "Admin", "Manager", or "Worker"
+    @NotBlank(message = "First name cannot be blank")
+    private String firstName;
+
+    @NotBlank(message = "Last name cannot be blank")
+    private String lastName;
+
 }

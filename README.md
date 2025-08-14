@@ -65,3 +65,32 @@ Logic:  Implement registration endpoint to create new users with assigned roles.
 - `ch.qos.logback:logback-classic`
 
 --- END ---
+
+
+---
+**Date:** 2025-08-14 09:57:53
+**Branch:** feature/WMS-3_20250814095637
+---
+
+## 📝 Project Summary
+
+Feature: Restrict access to modules based on user roles.
+Input: User role (e.g., Admin, Worker).
+Output: Access granted or denied to specific modules based on user role.
+Constraints: Must be implemented in Java 21 using Spring Boot 3.5.*, layered architecture, Maven, MongoDB, Swagger/OpenAPI, JUnit/Mockito, Docker, and GitHub Actions CI.  Should follow best practices for API documentation and testing.
+Logic:  If user role is Admin, grant access to all configuration modules. If user role is Worker, grant access to inventory update modules. Other roles will have access defined as needed.
+
+### 🛠️ Core Dependencies
+
+- `org.springframework.boot:spring-boot-starter-data-mongodb`
+- `org.springframework.boot:spring-boot-starter-web`
+- `org.springframework.boot:spring-boot-starter-security`
+- `org.projectlombok:lombok:optional`
+- `org.springframework.boot:spring-boot-starter-test:runtime`
+- `org.mockito:mockito-core:5.0.0`
+- `org.springframework.boot:spring-boot-starter-validation`
+- `org.slf4j:slf4j-api`
+- `ch.qos.logback:logback-classic`
+- `org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0`
+
+--- END ---
