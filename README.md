@@ -36,3 +36,32 @@ Logic: Create Java classes with attributes corresponding to the specified entiti
 - `org.mockito:mockito-core:5.0.0`
 
 --- END ---
+
+
+---
+**Date:** 2025-08-14 09:23:06
+**Branch:** feature/WMS-2_20250814092159
+---
+
+## 📝 Project Summary
+
+Feature: User registration and login with role-based authentication (Admin, Manager, Worker)
+Input: User credentials (username, password, role) for registration and login.
+Output: Successful registration creates a new user account. Successful login grants access based on user role.  API documentation via Swagger/OpenAPI.
+Constraints: Java 21, Spring Boot 3.5.*, Layered architecture (Controller, Service, Repository), Maven, MongoDB, JUnit/Mockito, Docker, GitHub Actions CI.
+Logic:  Implement registration endpoint to create new users with assigned roles. Implement login endpoint to authenticate users and grant access based on role.  Integrate with MongoDB for data persistence.  Document API with Swagger/OpenAPI. Implement unit and integration tests.  Provide Dockerfile and GitHub Actions CI workflow.
+
+### 🛠️ Core Dependencies
+
+- `org.springframework.boot:spring-boot-starter-data-mongodb`
+- `org.springframework.boot:spring-boot-starter-web`
+- `org.springframework.boot:spring-boot-starter-security`
+- `org.projectlombok:lombok:optional`
+- `org.springframework.boot:spring-boot-starter-test:runtime`
+- `org.mockito:mockito-core:5.0.0`
+- `org.springframework.boot:spring-boot-starter-validation`
+- `org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0`
+- `org.slf4j:slf4j-api`
+- `ch.qos.logback:logback-classic`
+
+--- END ---
