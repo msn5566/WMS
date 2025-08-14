@@ -62,3 +62,37 @@ Repository-Name: WMS
 
 package-name: com.wms
 --- END ---
+
+
+---
+**Date:** 2025-08-14 09:23:06
+**Branch:** feature/WMS-2_20250814092159
+---
+
+Implement user registration and login
+
+Create endpoints and frontend for user registration and authentication using roles like Admin, Manager, and Worker.
+
+
+
+
+
+Non-Functional Requirements
+
+* Must be written in Java 21 using Spring Boot 3.5.*
+* Should follow layered architecture (Controller, Service, Repository).
+* Must use Maven for build.
+* Data should be stored in a Mongodb database.
+* Should provide API documentation using Swagger/OpenAPI.
+* Unit and integration tests must be written using JUnit and Mockito.
+* Must provide Dockerfile for containerization.
+* Should include GitHub Actions CI workflow for build, test, and Docker image creation.
+
+ 
+
+GitHub-URL: [https://github.com/msn5566/WMS|https://github.com/msn5566/WMS|smart-link] 
+checkout_branch: development
+Repository-Name: WMS
+
+package-name: com.wms
+--- END ---
